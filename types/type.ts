@@ -1,5 +1,5 @@
-import { BaseUserMeta, User } from "@liveblocks/client";
-import { Gradient, Pattern } from "fabric/fabric-impl";
+import { BaseUserMeta, User } from '@liveblocks/client';
+import { Gradient, Pattern } from 'fabric/fabric-impl';
 
 export enum CursorMode {
   Hidden,
@@ -64,8 +64,7 @@ export type ActiveElement = {
   icon: string;
 } | null;
 
-export interface CustomFabricObject<T extends fabric.Object>
-  extends fabric.Object {
+export interface CustomFabricObject<T extends fabric.Object> extends fabric.Object {
   objectId?: string;
 }
 
