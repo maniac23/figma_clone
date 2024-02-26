@@ -12,6 +12,7 @@ import {
   handleCanvasObjectScaling,
   handleCanvasSelectionCreated,
   handleCanvaseMouseMove,
+  handlePathCreated,
   handleResize,
   initializeFabric,
   renderCanvas,
@@ -131,13 +132,17 @@ export default function Page() {
     canvas.on('object:modified', (options) => {
       handleCanvasObjectModified({ options, syncShapeInStorage });
     });
-
     canvas.on('selection:created', (options) => {
       handleCanvasSelectionCreated({ options, isEditingRef, setElementAttributes });
     });
-
     canvas.on('object:scaling', (options) => {
       handleCanvasObjectScaling({ options, setElementAttributes });
+    });
+    canvas.on('path:created', (options) => {
+      handlePathCreated({
+        options,
+        syncShapeInStorage,
+      });
     });
 
     window.addEventListener('resize', () => {

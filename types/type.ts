@@ -117,12 +117,6 @@ export type ShapesMenuProps = {
   imageInputRef: any;
 };
 
-export type Presence = any;
-
-export type LiveCursorProps = {
-  others: readonly User<Presence, BaseUserMeta>[];
-};
-
 export type CanvasMouseDown = {
   options: fabric.IEvent;
   canvas: fabric.Canvas;
