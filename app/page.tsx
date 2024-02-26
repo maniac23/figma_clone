@@ -67,7 +67,7 @@ export default function Page() {
   const deleteAllShapes = useMutation(({ storage }) => {
     const canvasObjects = storage.get('canvasObjects');
     if (!canvasObjects || canvasObjects.size === 0) return true;
-    for (const { key, value } of canvasObjects.entries()) {
+    for (const [key, _value] of canvasObjects.entries()) {
       canvasObjects.delete(key);
     }
     return canvasObjects.size === 0;
@@ -163,6 +163,7 @@ export default function Page() {
     return () => {
       canvas.dispose();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
